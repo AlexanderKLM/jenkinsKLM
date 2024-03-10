@@ -1,4 +1,4 @@
-From python:latest
+FROM python:latest
 
 COPY pie.py /
 
