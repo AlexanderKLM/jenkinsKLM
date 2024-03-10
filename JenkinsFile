@@ -9,4 +9,10 @@ pipeline{
             }
         }
     }
+    post{
+         success{
+            archiveArtifacts artifacts: 'build/libs/successs.jar'
+        }
+    }
+   
 }
