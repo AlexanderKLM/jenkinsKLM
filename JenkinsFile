@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Run'){
             steps{
-                sh 'pie.py'
+                sh 'python3 pie.py'
             }
         }
     }
