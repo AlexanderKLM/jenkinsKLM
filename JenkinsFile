@@ -3,7 +3,7 @@ pipeline{
         docker {image 'python:latest'}
     }
     stages{
-        stage('Run'){
+        stage('run'){
             steps{
                 sh 'python3 pie.py'
             }
@@ -11,7 +11,7 @@ pipeline{
     }
     post{
          success{
-            archiveArtifacts artifacts: 'build/libs/successs.jar'
+            archiveArtifacts artifacts: 'run/libs/successs.jar'
         }
     }
    
