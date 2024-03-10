@@ -5,13 +5,13 @@ pipeline{
     stages{
         stage('run'){
             steps{
-                sh 'python3 pie.py'
+                sh 'python3 pie.py > some.jar'
             }
         }
     }
     post{
          success{
-            archiveArtifacts artifacts: 'main', fingerprint: true
+            archiveArtifacts artifacts: '**/*.jar'
         }
     }
    
