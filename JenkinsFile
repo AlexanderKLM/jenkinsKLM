@@ -1,13 +1,13 @@
 
 pipeline{
      agent {
-        docker {image 'python:latest'}
+        any
     }
     stages{
         stage('run'){
             steps{
-                sh 'sudo pip install pyinstaller'
-                sh 'sudo pyinstaller --onefile pie.py'
+                sh 'pip install pyinstaller'
+                sh 'pyinstaller --onefile pie.py'
             }
         }
     }
