@@ -6,8 +6,8 @@ pipeline{
     stages{
         stage('run'){
             steps{
-                sh 'pip install pyinstaller'
-                sh 'pyinstaller --onefile pie.py'
+                sh 'sudo pip install pyinstaller'
+                sh 'sudo pyinstaller --onefile pie.py'
             }
         }
     }
