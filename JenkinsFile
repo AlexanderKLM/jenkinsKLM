@@ -1,3 +1,4 @@
+
 pipeline{
      agent {
         docker {image 'python:latest'}
@@ -5,13 +6,14 @@ pipeline{
     stages{
         stage('run'){
             steps{
-                sh 'python3 pie.py > some.jar'
+                sh 'pip install pyinstaller'
+                sh 'pyinstaller --onefile pie.py'
             }
         }
     }
     post{
          success{
-            archiveArtifacts artifacts: '**/*.jar'
+            archiveArtifacts artifacts: 'dist/pie.exe'
         }
     }
    
